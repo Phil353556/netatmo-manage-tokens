@@ -2,8 +2,8 @@
 Management of tokens is needed to interact with Netatmo devices
 
 # Introduction 
-Since end of 2022, it it no more possible to obtain a token with a username and a password.
-A new process must be followed as described here:
+Since end of 2022, it it no more possible to obtain a token with a username and a password.  
+A new process must be followed as described here:  
 https://dev.netatmo.com/apidocumentation/oauth#authorization-code 
 
 # Pre-requisistes

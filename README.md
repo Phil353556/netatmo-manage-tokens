@@ -65,27 +65,27 @@ https://dev.netatmo.com/apidocumentation/oauth#authorization-code
 
  The results are the three files written with the correct tokens and expire time values.  
 
-# Please note:
-Coherency is a MUST on redirect_uri  between:
-        -your application at https://dev.netatmo.com/apps/
-        -the URL https://api.netatmo.com/oauth2/authorize
-        the URL of a redirect_uri MUST terminate with a /
+# Please note
+Coherency is a MUST on redirect_uri  between:  
+        -your application at https://dev.netatmo.com/apps/  
+        -the URL https://api.netatmo.com/oauth2/authorize  
+        the URL of a redirect_uri MUST terminate with a /  
 
-All possibles scopes are:
-        read_station
-        read_presence write_presence read_camera write_camera
-        read_doorbell read_smokedetector read_carbonmonoxidedetector read_homecoach
-        read_thermostat write_thermostat
-        read_magellan write_magellan read_mx
-  all scopes can be used in one row.
+All possibles scopes are:  
+        read_station  
+        read_presence write_presence read_camera write_camera  
+        read_doorbell read_smokedetector read_carbonmonoxidedetector read_homecoach  
+        read_thermostat write_thermostat  
+        read_magellan write_magellan read_mx  
+  all scopes can be used in one row.  
 
 
-- Create a script which uses the code to interact with the netatmo's devices of the home
-  This part will not be discussed here, only the management of tokens. This will be another topic later.
+- Create a script which uses the code to interact with the netatmo's devices of the home  
+  This part will not be discussed here, only the management of tokens. This will be another topic later.  
 
-- in // manage the token because the access_token expire every 10800s (so 3hours) after you get it
-  Thus the tokens (access and refresh) must be refresh at least every 3hours so the the script hereunder can make the job.
-  ------------------------------------------------------------------------------*/
+- in // manage the token because the access_token expire every 10800s (so 3hours) after you get it  
+  Thus the tokens (access and refresh) must be refresh at least every 3hours so the the script hereunder can make the job.  
+  ------------------------------------------------------------------------------*/  
 
 # usage of the script netatmo_manage_tokens.php
 

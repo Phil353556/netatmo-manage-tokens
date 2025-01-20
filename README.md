@@ -1,14 +1,14 @@
 # netatmo-manage-token
 Management of tokens needs to interact with Netatmo devices
 
-Introduction 
+# Introduction 
 Since end of 2022, it it no more possible to obtain a token with a username and a password.
 A new process must be followed as described here:
    
-So sumup the process:
+# Sumup the process
+
 - Create an application on https://dev.netatmo.com/apps/
   note the client_id, client_secret and redirect_uri
-
 - Edit the file file_parameters.txt 
   and modify ONLY the field after the sign =  
   fill with your client_id, client_secret, scope and redirect_url values
@@ -36,7 +36,8 @@ So sumup the process:
   Result is: http://localhost/?state=teststate&code=8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa
   use the 32 caracters after the word code =
   to initiate the process using the netatmo_manage_tokens.php to obtain access and refresh tokens and expire in time
-  example:
+
+   example:
   $ ./netatmo_manage_tokens.php 8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa
  ----------------8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa------------
  --------------------------------------------------------------------------
@@ -51,7 +52,7 @@ So sumup the process:
 
  results are three files written with the correct tokens and expire time.
 
-Please note:
+# Please note:
 Coherency is a MUST on redirect_uri  between:
         -your application at https://dev.netatmo.com/apps/
         -the URL https://api.netatmo.com/oauth2/authorize
@@ -73,7 +74,7 @@ All possibles scopes are:
   Thus the tokens (access and refresh) must be refresh at least every 3hours so the the script hereunder can make the job.
   ------------------------------------------------------------------------------*/
 
-#usage of the script netatmo_manage_tokens.php
+# usage of the script netatmo_manage_tokens.php
 ./netatmo_manage_tokens.php
  -----------------------------------------------------------------------------------
  Usage: [usage|code|current|refresh ]
@@ -110,7 +111,7 @@ All possibles scopes are:
  -----------------------------------------------------------------------------------
 
 
-#Return codes by function
+# Return codes by function
 
 function f_read_file_parameters($display)
    10 : file parameters.txt do not exist

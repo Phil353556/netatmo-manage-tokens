@@ -69,9 +69,9 @@ https://dev.netatmo.com/apidocumentation/oauth#authorization-code
  The refresh_token which never expire, is needed to refresh the access_token.  
  When testing the script, I found that it is not necessary to wait 10800s to renew the token.  
  The expire time is in the unix form, UTC reference, ie 
-` 1737381406
-2012-04-06T10:03:59Z`
-``
+` 1737381406``  
+means  
+``2012-04-06T10:03:59Z`` 
 
 # Please note
 Coherency is a MUST on redirect_uri  between:  
@@ -91,7 +91,7 @@ All possibles scopes are:
 - Create a script which uses the code to interact with the netatmo's devices of the home  
   This part will not be discussed here, only the management of tokens. This will be another topic later.  
 
-- in // manage the token because the access_token expire every 10800s (so 3hours) after you get it  
+- in // manage the token because the access_token expire every 10800s (so 3 hours) after you get it  
   Thus the tokens (access and refresh) must be refresh at least every 3hours so the the script hereunder can make the job.  
   ------------------------------------------------------------------------------*/  
 

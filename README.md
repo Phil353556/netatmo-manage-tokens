@@ -4,6 +4,7 @@ Management of tokens needs to interact with Netatmo devices
 # Introduction 
 Since end of 2022, it it no more possible to obtain a token with a username and a password.
 A new process must be followed as described here:
+https://dev.netatmo.com/apidocumentation/oauth#authorization-code 
 
 # Pre-requisistes
   The following packages must be already available or installed on the system before using the php script supplied.
@@ -41,11 +42,11 @@ A new process must be followed as described here:
       
    An example:
   ``https://api.netatmo.com/oauth2/authorize?client_id=6xxxxxxxxxxxxxxxxxxxxxx4&redirect_uri=http://localhost/&netatmo&state=codestate&scope=read_presence%20write_presence%20read_camera%20write_camera%20`` <br/>
-  to get a code which is display once you validate on the netatmo's webpage
-  example:
-  Result is:  ``http://localhost/?state=teststate&code=8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa``<br/>
-  use the 32 caracters after the word code =
-  to initiate the process using the netatmo_manage_tokens.php to obtain access and refresh tokens and expire in time
+  to get a code which is display once you validate on the netatmo's webpage  
+  example:  
+  Result is:  ``http://localhost/?state=teststate&code=8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa``<br/>  
+  use the 32 caracters after the word code =  
+  to initiate the process using the netatmo_manage_tokens.php to obtain access and refresh tokens and expire in time  
 
   example:
  ```` 

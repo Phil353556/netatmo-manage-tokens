@@ -68,7 +68,7 @@ https://dev.netatmo.com/apidocumentation/oauth#authorization-code
  see https://dev.netatmo.com/apidocumentation/  
  The refresh_token which never expire, is needed to refresh the access_token.  
  When testing the script, I found that it is not necessary to wait 10800s to renew the token.  
- The expire time is in the unix form, UTC reference, ie 
+ The expire time is in the unix form, UTC reference, ie   
 ``1737381406``  
 means  
 ``2012-04-06T10:03:59Z`` 

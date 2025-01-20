@@ -49,7 +49,7 @@ https://dev.netatmo.com/apidocumentation/oauth#authorization-code
   to initiate the process using the netatmo_manage_tokens.php to obtain access and refresh tokens and expire in time  
 
   example:
- ```` 
+ ``` 
   $ ./netatmo_manage_tokens.php 8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa
  ----------------8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa------------
  --------------------------------------------------------------------------
@@ -61,8 +61,9 @@ https://dev.netatmo.com/apidocumentation/oauth#authorization-code
  Write succesful 549c26f41c775931e28b4743|0b15f04cac748852da4f2fc6f331ada2 in file file_refresh_token.txt
  Write succesful 1737385729 in file file_expire_time.txt
  --------------------------------------------------------------------------
-  ```` </br>
- The results are the three files written with the correct tokens and expire time values.
+ ```
+
+ The results are the three files written with the correct tokens and expire time values.  
 
 # Please note:
 Coherency is a MUST on redirect_uri  between:

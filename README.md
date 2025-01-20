@@ -7,13 +7,14 @@ A new process must be followed as described here:
    
 # Sumup the process
 
-- Create an application on https://dev.netatmo.com/apps/
+* Create an application on https://dev.netatmo.com/apps/
   note the client_id, client_secret and redirect_uri
-- Edit the file file_parameters.txt 
+* Edit the file file_parameters.txt 
   and modify ONLY the field after the sign =  
   fill with your client_id, client_secret, scope and redirect_url values
   run the script with the display option on the command to check, what you wrote seems ok
   example:
+  ```
   $ ./netatmo_manage_tokens.php display
   -----------------------------------------------------------------------------------
   Line #0 client_id=6xxxxxxxxxxxxxxxxxxxxxxc 
@@ -21,6 +22,7 @@ A new process must be followed as described here:
   Line #2 scope=read_presence write_presence read_camera write_camera
   Line #3 redirect_uri=http://localhost/ 
   -----------------------------------------------------------------------------------
+  ```
   The three others files will be created automaticaly by the script:
     file_access_token.txt  
     file_expire_time.txt
@@ -38,6 +40,8 @@ A new process must be followed as described here:
   to initiate the process using the netatmo_manage_tokens.php to obtain access and refresh tokens and expire in time
 
    example:
+  > 
+  ```
   $ ./netatmo_manage_tokens.php 8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa
  ----------------8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa------------
  --------------------------------------------------------------------------
@@ -49,7 +53,7 @@ A new process must be followed as described here:
  Write succesful 549c26f41c775931e28b4743|0b15f04cac748852da4f2fc6f331ada2 in file file_refresh_token.txt
  Write succesful 1737385729 in file file_expire_time.txt
  --------------------------------------------------------------------------
-
+  ```
  results are three files written with the correct tokens and expire time.
 
 # Please note:
@@ -75,6 +79,8 @@ All possibles scopes are:
   ------------------------------------------------------------------------------*/
 
 # usage of the script netatmo_manage_tokens.php
+
+  ```
 ./netatmo_manage_tokens.php
  -----------------------------------------------------------------------------------
  Usage: [usage|code|current|refresh ]
@@ -109,7 +115,7 @@ All possibles scopes are:
          Get a new access token and a new refresh token
          using the current refresh token
  -----------------------------------------------------------------------------------
-
+  ```
 
 # Return codes by function
 

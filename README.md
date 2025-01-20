@@ -4,7 +4,12 @@ Management of tokens needs to interact with Netatmo devices
 # Introduction 
 Since end of 2022, it it no more possible to obtain a token with a username and a password.
 A new process must be followed as described here:
-   
+
+# Pre-requisistes
+  The following packages must be already available or installed on the system before using the php script supplied.
+  - php
+  - php-curl
+
 # Sumup the process
 
 * Create an application on https://dev.netatmo.com/apps/
@@ -30,31 +35,30 @@ A new process must be followed as described here:
   so don't create them
  
 - Use the client_id and client_secret with scope needed (station, camera, thermostat ....)
-   to create a URL like: https://api.netatmo.com/oauth2/authorize?client_id and so on
+   to create a URL like:   ```https://api.netatmo.com/oauth2/authorize?client_id ``` and so on
    An example:
-   https://api.netatmo.com/oauth2/authorize?client_id=6xxxxxxxxxxxxxxxxxxxxxx4&redirect_uri=http://localhost/&netatmo&state=codestate&scope=read_presence%20write_presence%20read_camera%20write_camera%20
+  ``https://api.netatmo.com/oauth2/authorize?client_id=6xxxxxxxxxxxxxxxxxxxxxx4&redirect_uri=http://localhost/&netatmo&state=codestate&scope=read_presence%20write_presence%20read_camera%20write_camera%20``
   to get a code which is display once you validate on the netatmo's webpage
   example:
-  Result is: http://localhost/?state=teststate&code=8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa
+  Result is:  ``http://localhost/?state=teststate&code=8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa``
   use the 32 caracters after the word code =
   to initiate the process using the netatmo_manage_tokens.php to obtain access and refresh tokens and expire in time
 
    example:
-  > 
   ```
   $ ./netatmo_manage_tokens.php 8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa
- ----------------8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa------------
+ ``----------------8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa------------``
  --------------------------------------------------------------------------
  --------------------------------------------------------------------------
- atoken 5xxxxxxxxxxxxxxxxxxxxx43|5bxxxxxxxxxxxxxxxxxxxxxxxxxxxx78
- rtoken 5xxxxxxxxxxxxxxxxxxxxx43|0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxa2
- etoken 10800
- Write succesful 549c26f41c775931e28b4743|5bde24b77f17ae6c264ccc8a500ed078 in file file_access_token.txt
- Write succesful 549c26f41c775931e28b4743|0b15f04cac748852da4f2fc6f331ada2 in file file_refresh_token.txt
- Write succesful 1737385729 in file file_expire_time.txt
+ ``atoken 5xxxxxxxxxxxxxxxxxxxxx43|5bxxxxxxxxxxxxxxxxxxxxxxxxxxxx78``
+ ``rtoken 5xxxxxxxxxxxxxxxxxxxxx43|0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxa2``
+ ``etoken 10800``
+ ``Write succesful 549c26f41c775931e28b4743|5bde24b77f17ae6c264ccc8a500ed078 in file file_access_token.txt``
+ ``Write succesful 549c26f41c775931e28b4743|0b15f04cac748852da4f2fc6f331ada2 in file file_refresh_token.txt``
+ ``Write succesful 1737385729 in file file_expire_time.txt``
  --------------------------------------------------------------------------
   ```
- results are three files written with the correct tokens and expire time.
+ The results are the three files written with the correct tokens and expire time values.
 
 # Please note:
 Coherency is a MUST on redirect_uri  between:

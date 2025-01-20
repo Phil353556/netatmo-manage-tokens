@@ -13,13 +13,13 @@ https://dev.netatmo.com/apidocumentation/oauth#authorization-code
 
 # Sumup of the process
 
-* Create an application on https://dev.netatmo.com/apps/
-  note the client_id, client_secret and redirect_uri
-* Edit the file file_parameters.txt 
+* Create an application on https://dev.netatmo.com/apps/  
+  note the client_id, client_secret and redirect_uri   
+* Edit the file file_parameters.txt   
   and modify ONLY the field after the sign =  
-  fill with your client_id, client_secret, scope and redirect_url values
-  run the script with the display option on the command to check, what you wrote seems ok
-  example:
+  fill with your client_id, client_secret, scope and redirect_url values  
+  run the script with the display option on the command to check, what you wrote seems ok  
+  example:  
   ```
   $ ./netatmo_manage_tokens.php display
   -----------------------------------------------------------------------------------
@@ -29,24 +29,24 @@ https://dev.netatmo.com/apidocumentation/oauth#authorization-code
   Line #3 redirect_uri=http://localhost/ 
   -----------------------------------------------------------------------------------
   ```
-  The three others files will be created automaticaly by the script:
-    file_access_token.txt  
-    file_expire_time.txt
-    file_refresh_token.txt
-  so don't create them
+  The three others files will be created automaticaly by the script:  
+    file_access_token.txt   
+    file_expire_time.txt  
+    file_refresh_token.txt  
+  so don't create them.  
  
 - Use the client_id and client_secret with scope needed (station, camera, thermostat ....)
    to create a URL like: <br/>
    ```https://api.netatmo.com/oauth2/authorize?client_id ``` <br/>
    and so on
       
-   An example:
+   An example:  
   ``https://api.netatmo.com/oauth2/authorize?client_id=6xxxxxxxxxxxxxxxxxxxxxx4&redirect_uri=http://localhost/&netatmo&state=codestate&scope=read_presence%20write_presence%20read_camera%20write_camera%20`` <br/>
   to get a code which is display once you validate on the netatmo's webpage  
   example:  
   Result is:  ``http://localhost/?state=teststate&code=8c57xxxxxxxxxxxxxxxxxxxxxxxxadfa``<br/>  
   use the 32 caracters after the word code =  
-  to initiate the process using the netatmo_manage_tokens.php to obtain access and refresh tokens and expire in time  
+  to initiate the process use the netatmo_manage_tokens.php to obtain access and refresh tokens and expire in time  
 
   example:
  ``` 
@@ -174,7 +174,7 @@ All possibles scopes are:
     106 : code must composed with letters and numbers only  
 
 # Debug mode
-if you want to activate the debug mode 
+if you want to activate the debug mode  
 ``export  NA_DEBUG=1``  
 or  
 ``export NA_DEBUG=true``  

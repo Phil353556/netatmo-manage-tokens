@@ -1,5 +1,5 @@
 # netatmo-manage-token
-Management of tokens needs to interact with Netatmo devices
+Management of tokens is needed to interact with Netatmo devices
 
 # Introduction 
 Since end of 2022, it it no more possible to obtain a token with a username and a password.
@@ -62,8 +62,16 @@ https://dev.netatmo.com/apidocumentation/oauth#authorization-code
  Write succesful 1737385729 in file file_expire_time.txt
  --------------------------------------------------------------------------
  ```
-
- The results are the three files written with the correct tokens and expire time values.  
+ The results are the three files written with the correct tokens and expire time values.   
+ 
+ The access_token, which expire in 10800s once obtained, is then used to interact with Netatmo devices: weather, camera, thermostat and so on  
+ see https://dev.netatmo.com/apidocumentation/  
+ The refresh_token which never expire, is needed to refresh the access_token.  
+ When testing the script, I found that it is not necessary to wait 10800s to renew the token.  
+ The expire time is in the unix form, UTC reference, ie 
+` 1737381406
+2012-04-06T10:03:59Z`
+``
 
 # Please note
 Coherency is a MUST on redirect_uri  between:  

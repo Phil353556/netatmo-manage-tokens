@@ -128,13 +128,13 @@ All possibles scopes are:
 
 # Return codes by function
 
-function f_read_file_parameters($display)
+##function f_read_file_parameters($display)  
    10 : file parameters.txt do not exist
 
-function f_get_tokens($grant_type,$client_id,$client_secret,$code,$scope,$redirect_uri,$Content_Type)
+##function f_get_tokens($grant_type,$client_id,$client_secret,$code,$scope,$redirect_uri,$Content_Type)  
    20 : the http code is not 200
 
-function f_writefile($access_token_to_write,$refresh_token_to_write)
+##function f_writefile($access_token_to_write,$refresh_token_to_write)
    30 : file file_access_token.txt do not exist
    31 : file file_access_token.txt cannot be written
    32 : file file_refresh_token.txt do not exist
@@ -142,21 +142,21 @@ function f_writefile($access_token_to_write,$refresh_token_to_write)
    34 : file file_expire_time.txt do not exist
    35 : file file_expire_time.txt cannot be written
 
-function f_readfile()
+##function f_readfile()
    40 : file file_access_token.txt do not exist
    41 : file file_refresh_token.txt do not exist
    42 : file file_expire_time.txt do not exist
 
-function f_get_refresh_tokens($grant_type,$refresh_token,$client_id,$client_secret)
+##function f_get_refresh_tokens($grant_type,$refresh_token,$client_id,$client_secret)
    50 : file file_expire_time.txt do not exist
    51 : file file_refresh_token.txt do not exist
    52 : the http code is not 200
 
 
-function f_usage()
+##function f_usage()
  -> no return code
 
-Main routine
+##Main routine
       0 : normal run
     100 : no parameter on command line
     101 : usage was the first parameter
@@ -167,12 +167,12 @@ Main routine
     106 : code must composed with letters and numbers only
 
 # Debug mode
-if you want to activate the debug mode
-export  NA_DEBUG=1
-or
-export NA_DEBUG=true
+if you want to activate the debug mode 
+``export  NA_DEBUG=1``
+or  
+``export NA_DEBUG=true``
 
-To desactivate the debug mode
-export  NA_DEBUG=0
-or
-export NA_DEBUG=false
+To desactivate the debug mode  
+``export  NA_DEBUG=0``
+or  
+``export NA_DEBUG=false``

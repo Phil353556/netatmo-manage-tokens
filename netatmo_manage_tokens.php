@@ -93,6 +93,8 @@ if ( $DEBUG == true )
 if ( $display == "true" ) 
 {
 	printf(" ----------------------------------------------------------------------------------- \n");
+	printf(" ".date('Y-m-d H:i:s\Z',time())." \n");
+	printf(" \n");
 }
 
 if (file_exists($file_parameters) )
@@ -169,6 +171,9 @@ if ( $DEBUG == true )
 	printf(" function: f_get_tokens\n");
 }
 
+printf(" ".date('Y-m-d H:i:s\Z',time())." \n");
+printf(" \n");
+
 $handle = curl_init();
 
 $datas = array("grant_type"=>$grant_type,"client_id"=>$client_id,"client_secret"=>$client_secret,"code"=>$code,"scope"=>$scope,"redirect_uri"=>$redirect_uri,"Content-Type:" => $Content_Type);
@@ -205,15 +210,15 @@ else
 $result=curl_exec($handle);
 $httpcode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 curl_close($handle);
-$array = json_decode($result, true);
 
 if($httpcode != 200 ) {
 	printf(" --------------------------------------\n");
         printf(" ERROR: serveur return code is: ".$httpcode." \n");
 	printf(" --------------------------------------\n");
-       	var_dump($array);
 	exit(20);
     }
+
+$array = json_decode($result, true);
 
 if ( $DEBUG == true )
 {
@@ -302,6 +307,9 @@ if ( $DEBUG == true )
 {
 	printf(" function: f_readfiles\n\n");
 }
+		
+printf(" ".date('Y-m-d H:i:s\Z',time())." \n");
+printf(" \n");
 
 printf(" File : ".$file_access_token." \n");
 if (!$myfile = @fopen($file_access_token, 'r')) {
@@ -378,6 +386,9 @@ if ( $DEBUG == true )
 {
 	printf(" function: f_get_refresh_tokens\n");
 }
+
+printf(" ".date('Y-m-d H:i:s\Z',time())." \n");
+printf(" \n");
 
 printf(" file : ".$file_expire_time." \n");
 if (!$myfile = @fopen($file_expire_time, 'r')) {
@@ -480,6 +491,7 @@ return [$array['access_token'],$array['refresh_token'],$array['expires_in']];
 /*------------------------------------------------------------------------------*/
 function f_usage()
 {
+printf(" ".date('Y-m-d H:i:s\Z',time())." \n");
 echo " ----------------------------------------------------------------------------------- \n";
 echo " Usage: [usage|code|current|refresh ]			                           \n";
 echo "                                                                                     \n";
@@ -597,6 +609,8 @@ else
 	{
 	f_read_file_parameters("false");
 	printf(" ----------------".$code."------------\n");
+	printf(" ".date('Y-m-d H:i:s\Z',time())." \n");
+	printf(" \n");
 	[$access_token, $refresh_token, $expire_token ] = f_get_tokens($grant_type,$client_id,$client_secret,$code,$scope,$redirect_uri,$Content_Type);
 	printf(" atoken ".$access_token."\n rtoken ".$refresh_token."\n etoken ".$expire_token."\n");
 	f_writefile($access_token,$refresh_token);

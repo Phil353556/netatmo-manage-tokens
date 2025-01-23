@@ -93,7 +93,7 @@ if ( $DEBUG == true )
 if ( $display == "true" ) 
 {
 	printf(" ----------------------------------------------------------------------------------- \n");
-	printf(" ".date('Y-m-d H:i:s\Z',time())." \n");
+	printf(" ".date('Y-m-d H:i:s\Z',time())." (UTC) \n");
 	printf(" \n");
 }
 
@@ -171,7 +171,7 @@ if ( $DEBUG == true )
 	printf(" function: f_get_tokens\n");
 }
 
-printf(" ".date('Y-m-d H:i:s\Z',time())." \n");
+printf(" ".date('Y-m-d H:i:s\Z',time())." (UTC) \n");
 printf(" \n");
 
 $handle = curl_init();
@@ -308,7 +308,7 @@ if ( $DEBUG == true )
 	printf(" function: f_readfiles\n\n");
 }
 		
-printf(" ".date('Y-m-d H:i:s\Z',time())." \n");
+printf(" ".date('Y-m-d H:i:s\Z',time())." (UTC) \n");
 printf(" \n");
 
 printf(" File : ".$file_access_token." \n");
@@ -334,7 +334,7 @@ if (!$myfile = @fopen($file_expire_time, 'r')) {
 }
 $expire_time=fread($myfile,filesize($file_expire_time));
 
-printf(" Initial time ".$expire_time." \n");
+printf(" Initial time  ".str_replace("\n","",$expire_time)." or ".gmdate('Y-m-d H:i:s\Z',$expire_time)." (UTC)\n\n");
 $expire_time= (int)$expire_time;
 $delta=time()-$expire_time;
 printf(" Delta time with now  ".$delta." / 10800 \n");
@@ -387,7 +387,7 @@ if ( $DEBUG == true )
 	printf(" function: f_get_refresh_tokens\n");
 }
 
-printf(" ".date('Y-m-d H:i:s\Z',time())." \n");
+printf(" ".date('Y-m-d H:i:s\Z',time())." (UTC) \n");
 printf(" \n");
 
 printf(" file : ".$file_expire_time." \n");
@@ -491,7 +491,7 @@ return [$array['access_token'],$array['refresh_token'],$array['expires_in']];
 /*------------------------------------------------------------------------------*/
 function f_usage()
 {
-printf(" ".date('Y-m-d H:i:s\Z',time())." \n");
+printf(" ".date('Y-m-d H:i:s\Z',time())." (UTC) \n");
 echo " ----------------------------------------------------------------------------------- \n";
 echo " Usage: [usage|code|current|refresh ]			                           \n";
 echo "                                                                                     \n";
@@ -609,7 +609,7 @@ else
 	{
 	f_read_file_parameters("false");
 	printf(" ----------------".$code."------------\n");
-	printf(" ".date('Y-m-d H:i:s\Z',time())." \n");
+	printf(" ".date('Y-m-d H:i:s\Z',time())." (UTC) \n");
 	printf(" \n");
 	[$access_token, $refresh_token, $expire_token ] = f_get_tokens($grant_type,$client_id,$client_secret,$code,$scope,$redirect_uri,$Content_Type);
 	printf(" atoken ".$access_token."\n rtoken ".$refresh_token."\n etoken ".$expire_token."\n");

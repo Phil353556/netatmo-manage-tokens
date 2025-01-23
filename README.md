@@ -1,4 +1,4 @@
-# netatmo-manage-token
+# netatmo-manage-tokens
 Management of tokens is needed to interact with Netatmo devices
 
 # Introduction 
@@ -120,7 +120,7 @@ All possibles scopes are:
 
          If a valide code is the first parameter of the script then :
          - The access_token and refresh_token are requested from netatmo
-        - The access token and refresh token are displayed
+         - The access token and refresh token are displayed
          - And store in two files:  file_access_token.txt and file_refresh_token.txt
          - A third file file_expire_time.txt is also created
 
@@ -177,9 +177,20 @@ All possibles scopes are:
 if you want to activate the debug mode  
 ``export  NA_DEBUG=1``  
 or  
-``export NA_DEBUG=true``  
+``export NA_DEBUG=true`` 
 
 To desactivate the debug mode  
 ``export  NA_DEBUG=0``
+
+# Troubleshooting
+
+ * The rights for the script must be at minimum 'execute' for the user, using the command:   
+  `chmod u+x ./`netatmo_manage_tokens.php   
+ * In the file   `file_parameters.txt`, only modify the text with your informations, at the right of the equal sign (=)   
+   Only four lines,  do not add line before or after,  and do not add comment with the hash sign (#)  
+   do not modify the left part of equal sign  
+
+
+
 or  
 ``export NA_DEBUG=false``

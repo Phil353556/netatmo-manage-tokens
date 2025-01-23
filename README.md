@@ -181,6 +181,8 @@ or
 
 To desactivate the debug mode  
 ``export  NA_DEBUG=0``
+or  
+``export NA_DEBUG=false``
 
 # Troubleshooting
 
@@ -190,7 +192,3 @@ To desactivate the debug mode
    Only four lines,  do not add line before or after,  and do not add comment with the hash sign (#)  
    do not modify the left part of equal sign  
 
-
-
-or  
-``export NA_DEBUG=false``

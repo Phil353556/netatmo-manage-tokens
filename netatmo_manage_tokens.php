@@ -334,7 +334,7 @@ if (!$myfile = @fopen($file_expire_time, 'r')) {
 }
 $expire_time=fread($myfile,filesize($file_expire_time));
 
-printf(" Initial time  ".str_replace("\n","",$expire_time)." or ".gmdate('Y-m-d H:i:s\Z',$expire_time)." (UTC)\n\n");
+printf(" Initial time  ".str_replace("\n","",$expire_time)." or ".@gmdate('Y-m-d H:i:s\Z',$expire_time)." (UTC)\n\n");
 $expire_time= (int)$expire_time;
 $delta=time()-$expire_time;
 printf(" Delta time with now  ".$delta." / 10800 \n");

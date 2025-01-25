@@ -47,7 +47,6 @@ function f_get_refresh_tokens($grant_type,$refresh_token,$client_id,$client_secr
    51 : file file_refresh_token.txt do not exist
    52 : the http code is not 200
 
-
 function f_usage()
  -> no return code
 
@@ -492,39 +491,39 @@ return [$array['access_token'],$array['refresh_token'],$array['expires_in']];
 function f_usage()
 {
 printf(" ".date('Y-m-d H:i:s\Z',time())." (UTC) \n");
-echo " ----------------------------------------------------------------------------------- \n";
-echo " Usage: [usage|code|current|refresh ]			                           \n";
-echo "                                                                                     \n";
-echo " usage                                                                               \n";
-echo "         This help                                                                   \n";
-echo "         If the program is run with no parameter, usage is displayed                 \n";
-echo "                                                                                     \n";
-echo " display                                                                             \n";
-echo "         Display the contents of the parameters file, there are four lines:          \n";
-echo "         -client_id                                                                  \n";
-echo "         -client_secret                                                              \n";
-echo "         -scope                                                                      \n";
-echo "         -redirect-uri                                                               \n";
-echo "                                                                                     \n";
-echo " code                                                                                \n";
-echo "         Use the code (32c) displayed in URL bar 					   \n";
-echo "         AFTER the use of the specific URL similar to:                               \n";
-echo "         https://api.netatmo.com/oauth2/authorize?client_id=xxxxxx                   \n";
-echo "                                                                                     \n";
-echo "         If a valide code is the first parameter of the script then :                \n";
-echo "         - The access_token and refresh_token are requested from netatmo             \n";     
-echo "         - The access token and refresh token are displayed 	                   \n";     
-echo "         - And store in two files:  file_access_token.txt and file_refresh_token.txt \n";     
-echo "         - A third file file_expire_time.txt is also created	                   \n";     
-echo "                                                                                     \n";
-echo " current                                                                             \n";
-echo "         Display the contents of access token, refresh token and expire time files   \n";
-echo "         Calculate and display the number of seconds since the expire time obtained  \n";
-echo "                                                                                     \n";
-echo " refresh                                                                             \n";
-echo "         Get a new access token and a new refresh token 				   \n";
-echo "         using the current refresh token                                             \n";
-echo " ----------------------------------------------------------------------------------- \n";
+printf(" ----------------------------------------------------------------------------------- \n");
+printf(" Usage: [usage|code|current|refresh ]			                             \n");
+printf("                                                                                     \n");
+printf(" usage                                                                               \n");
+printf("         This help                                                                   \n");
+printf("         If the program is run with no parameter, usage is displayed                 \n");
+printf("                                                                                     \n");
+printf(" display                                                                             \n");
+printf("         Display the contents of the parameters file, there are four lines:          \n");
+printf("         -client_id                                                                  \n");
+printf("         -client_secret                                                              \n");
+printf("         -scope                                                                      \n");
+printf("         -redirect-uri                                                               \n");
+printf("                                                                                     \n");
+printf(" code                                                                                \n");
+printf("         Use the code (32c) displayed in URL bar 				     \n");
+printf("         AFTER the use of the specific URL similar to:                               \n");
+printf("         https://api.netatmo.com/oauth2/authorize?client_id=xxxxxx                   \n");
+printf("                                                                                     \n");
+printf("         If a valide code is the first parameter of the script then :                \n");
+printf("         - The access_token and refresh_token are requested from netatmo             \n");     
+printf("         - The access token and refresh token are displayed 	                     \n");     
+printf("         - And store in two files:  file_access_token.txt and file_refresh_token.txt \n");     
+printf("         - A third file file_expire_time.txt is also created	                     \n");     
+printf("                                                                                     \n");
+printf(" current                                                                             \n");
+printf("         Display the contents of access token, refresh token and expire time files   \n");
+printf("         Calculate and display the number of seconds since the expire time obtained  \n");
+printf("                                                                                     \n");
+printf(" refresh                                                                             \n");
+printf("         Get a new access token and a new refresh token 	                     \n");
+printf("         using the current refresh token                                             \n");
+printf(" ----------------------------------------------------------------------------------- \n");
 }
 
 /*------------------------------------------------------------------------------*/

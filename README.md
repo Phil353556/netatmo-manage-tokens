@@ -134,6 +134,17 @@ All possibles scopes are:
  -----------------------------------------------------------------------------------
   ```
 
+# Examples 
+
+![image](https://github.com/user-attachments/assets/0ebdb134-e05a-4465-bd7b-7fa21728d304)
+
+![image](https://github.com/user-attachments/assets/cf2d62e8-1aa4-42af-9a1f-5a00b6efa971)
+
+![image](https://github.com/user-attachments/assets/02c3d4b8-2c07-4879-b414-20ebe6af4faf)
+
+![image](https://github.com/user-attachments/assets/751a2734-cbe6-489c-92e9-764f5d7ed7ff)
+
+
 # Return codes by function
 
 ##function f_read_file_parameters($display)  

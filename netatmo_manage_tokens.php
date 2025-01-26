@@ -164,14 +164,12 @@ global $client_secret;
 global $scope;
 global $redirect_uri;
 
-printf(" --------------------------------------------------------------------------\n");
 if ( $DEBUG == true )
 {
+        printf(" ----------------------------------------------------------------------------------- \n");
 	printf(" function: f_get_tokens\n");
+        printf(" ----------------------------------------------------------------------------------- \n");
 }
-
-printf(" ".date('Y-m-d H:i:s\Z',time())." (UTC) \n");
-printf(" \n");
 
 $handle = curl_init();
 
@@ -211,9 +209,9 @@ $httpcode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 curl_close($handle);
 
 if($httpcode != 200 ) {
-	printf(" --------------------------------------\n");
+        printf(" ----------------------------------------------------------------------------------- \n");
         printf(" ERROR: serveur return code is: ".$httpcode." \n");
-	printf(" --------------------------------------\n");
+        printf(" ----------------------------------------------------------------------------------- \n");
 	exit(20);
     }
 
@@ -227,7 +225,8 @@ if ( $DEBUG == true )
 	printf(" refresh_token: ".$array['refresh_token']."\n");
 	printf(" access_token_expire_in: ".$array['expires_in']."\n");
 }
-printf(" --------------------------------------------------------------------------\n");
+
+printf(" ----------------------------------------------------------------------------------- \n");
 return [$array['access_token'],$array['refresh_token'],$array['expires_in']]; 
 }
 
@@ -243,7 +242,7 @@ global $file_expire_time;
   
 if ( $DEBUG == true )
 {
-	printf(" --------------------------------------------------------------------------\n");
+	printf(" ----------------------------------------------------------------------------------- \n");
 	printf(" function: f_write files\n");
 	printf(" file : ".$file_access_token." \n");
 	printf(" file : ".$file_refresh_token." \n");
@@ -282,7 +281,8 @@ if (fwrite($myfile, $current_unix_time) === FALSE) {
 }
 printf(" Write succesful $current_unix_time in file $file_expire_time \n");
 fclose($myfile);
-printf(" --------------------------------------------------------------------------\n");
+
+printf(" ----------------------------------------------------------------------------------- \n");
 
 }
 
@@ -607,9 +607,10 @@ else
 	else
 	{
 	f_read_file_parameters("false");
-	printf(" ----------------".$code."------------\n");
+	printf(" ----------------------------------------------------------------------------------- \n");
 	printf(" ".date('Y-m-d H:i:s\Z',time())." (UTC) \n");
 	printf(" \n");
+	printf(" CODE = ".$code."                                                                    \n");
 	[$access_token, $refresh_token, $expire_token ] = f_get_tokens($grant_type,$client_id,$client_secret,$code,$scope,$redirect_uri,$Content_Type);
 	printf(" atoken ".$access_token."\n rtoken ".$refresh_token."\n etoken ".$expire_token."\n");
 	f_writefile($access_token,$refresh_token);
